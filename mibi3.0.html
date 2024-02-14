@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Carta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+	<style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+             flex-direction: column;
+            height: 100vh;
+            background-color: #fad7df; /* Color de fondo rosa */
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive; 
+            font-size: 3em; /* Tamaño de la fuente */
+            color: #ff85a2; /* Color rosa */
+            text-align: center;
+        }
+    </style>
+	<link rel="stylesheet" type="text/css" href="pagina.css">
+</head>
+<body>
+	<h1>FELIZ 14 DE FEBRERO MIBI</h1>
+<main>
+	<div class="container-letter">
+	<div class="cover"></div>
+	<div class ="paper">Hola, Mibi teamo mucho, gracias por estos 2 años contigo, te adoro mucho pero mucho, le das mucho color a mio vida y me has motivado y apoyado en todo lo que he querido hacer, jamas vas a saber lo mucho que te amor, de verdad gracias por estar conmigo, espero que sigamos estando juntos. Teamo mucho mucho y que mejor regalo que aun seas mi pareja.
+	Feliz 14 de febrero con amo Teddy</div>
+	<div class="heart">❤️</div>
+	<div class="letter"></div>
+	<div class="options"> <button id="open">Abrir</button> <button id="close">Cerrar</button></div>
+	
+	 <audio controls>
+        <source src="mibii.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+</main>
+
+<script type="text/javascript">
+const btnOpenElement = document.querySelector('#open');	
+const btncloseElement = document.querySelector('#close');
+btncloseElement.disabled = true;
+
+btnOpenElement.addEventListener('click', ()=>{
+	btnOpenElement.disabled = true;
+	btncloseElement.disabled = false;
+	const coverElement = document.querySelector('.cover');
+	coverElement.classList.add('open-cover');
+ setTimeout(() => {
+        coverElement.style.zIndex = -1;
+
+        const paperElement = document.querySelector('.paper');
+        paperElement.classList.remove('close-paper');
+        paperElement.classList.add('open-paper');
+
+        //animación
+        const heartElement = document.querySelector('.heart');
+        heartElement.style.display = 'block';
+
+    }, 500);
+});	
+
+btncloseElement.addEventListener('click', ()=>{
+
+	btnOpenElement.disabled = false;
+	btncloseElement.disabled = true;
+	const coverElement = document.querySelector('.cover');
+	
+	const paperElement = document.querySelector('.paper');
+        paperElement.classList.remove('open-paper');
+        paperElement.classList.add('close-paper');
+
+setTimeout(() => {
+	coverElement.style.zIndex = 0;
+        coverElement.classList.remove('open-cover');
+        //corazon pa
+ const heartElement = document.querySelector('.heart');
+        heartElement.style.display = 'none';
+
+        
+    }, 500);
+
+});	
+</script>
+</body>
+</html>
